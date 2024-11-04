@@ -16,13 +16,13 @@ class ProjectRoutes implements \Ninja\Routes
 
      private $usersTable;
      private $authentication;
-
+    private $squeezeTable;
 
      
     public function __construct()
     {
-        //include __DIR__. '/../../includes/DatabaseConnection.php';
-        
+        include __DIR__. '/../../includes/DatabaseConnection.php';
+        $this->squeezeTable = new \Ninja\DatabaseMysqli($connection,'squeeze','id');
     }
 
 
@@ -37,10 +37,10 @@ class ProjectRoutes implements \Ninja\Routes
      */
     public function getRoutes()
     {
-     
-        
-        $audioController = new \Project\Controller\audioController();
-        
+            
+        $audioController = new \Project\Controller\AudioController();
+        $newsController = new \Project\Controller\NewsController();
+        $developperSqueezeController = new \Project\Controller\DevelopperSqueezeController($this->squeezeTable);
         
       $routes = [
                     ''=>
@@ -51,6 +51,25 @@ class ProjectRoutes implements \Ninja\Routes
                             'action'=>'entrepreneurs'
                         ]
                     ] ,
+                    'news/accueil'=>
+                    [
+                        'GET'=>
+                        [
+                            'controller'=>$newsController,
+                            'action'=>'accueil'
+                        ]
+                        ],
+                    'squeeze/developper'=>[
+                        'GET'=>
+                        [
+                            'controller'=>$developperSqueezeController,
+                            'action'=>'formDisplay'
+                        ],
+                        'POST'=>[
+                            'controller'=>$developperSqueezeController,
+                            'action'=>'formTreatment'
+                        ]
+                    ]
                     
                    
                 ]  ;

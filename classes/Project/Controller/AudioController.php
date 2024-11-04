@@ -1,6 +1,11 @@
 <?php
 namespace Project\Controller;
 
+
+/**
+ * Responsible for every interactions related
+ * to Audio
+ */
 class AudioController{
 
 
@@ -16,5 +21,8 @@ class AudioController{
         'template'=>'home.html.php'  
                 ];
     }
+
+    
+
 
 }

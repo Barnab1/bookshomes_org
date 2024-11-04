@@ -1,84 +1,53 @@
 <div class="container">
+        <!--Left sidebar-->
+        
+        <div class="left-sidebar">
             
-            <h1 id="title">Best Sellers</h1>
-            <div class="book">
-                <h3>Comment se faire des amis:</h3>
-                <div class="book_audio">
-                    <div class="image_book">
-                        <img src="../../templates/images/comment-se-faire-des-amis-2.jpg" alt="comment se faire des amis de Dale Carnegie">
-                    </div>
+            <div class="sidebar-profile-box">
+                <img src="../../templates/images/Couverture-Père-riche-Père-pauvre.png" width="100%" alt="Pere riche, Pere pauvre">
+                <div class="sidebar-profile-info">
+                    <img src="../../templates/images/kiyosaki.jpg" alt="rich Dad, poor dad">
+                    <h1>Rayan Walton</h1>
+                    <h3>Website Developper</h3>
+                    <ul>
+                        <li>Your profile views<span>52</span></li>
+                        <li>Your post views<span>52789</span></li>
+                        <li>Your connections<span>525</span></li>
+                    </ul>
+                </div>
+                <div class="sidebar-profile-link">
+                    <a href="#"><img src="../../templates/images/items.png" alt="items">My items</a>
+                    <a href=""><img src="../../templates/images/premium.png" alt="premium_picture">Try Premium</a>
+                </div>
+            </div>
+        </div>
+
+        <!--main-content-->
+
+        <div class="main-content">
+            <div class="create-post">
+                <!--<div class="create-post-input">-->
                    
-                    <audio src="../../templates/audio/how_to_win_friends.mp3" preload="auto" controls></audio>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-            </div>
-            <div class="book">
-                <h3>L"Alchimiste:</h3>
-
-                <div class="book_audio">
-                    <div class="image_book">
-                        <img src="../../templates/images/alchimiste.jpg" alt=" Alchimiste de Paulo Coelho">
+                    <div class="citation_box" id="citation_box">
+                        <p class="citation bold text_center">
+                            Seigneur, faites de moi, un instrument de votre paix
+                        </p>
+                        <i class="auteur">Saint François d'Assise</i>
                     </div>
-                    
-                    <audio src="../../templates/audio/alchimiste.mp3" preload="auto" controls></audio>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-            </div>
-            <div class="book">
-                <h3>Parler en public:</h3>
-                <div class="book_audio">
-                    <div class="image_book">
-                        <img src="../../templates/images/parler_en_public.jpeg" alt="Parler en public de Dale Carnegie">
-                    </div>
-                    <audio src="../../templates/audio/parler_en_public.mp3" preload="auto" controls></audio>
-                </div>
-                <div class="description">
-                    <p></p>
+                <!--</div>-->
+                <div class=" audio-book-field " id="audioBookField">
+                    <li class="active-link" onclick="generateAudioEntrepreneurs()"><img src="../../templates/images/marketplace.png" alt="photo">Business</li>
+                    <li onclick="generateAudioProfession()"><img src="../../templates/images/event.png" alt="Video">Profession</li>
+                    <li onclick="generateAudioFamily()"><img src="../../templates/images/event.png" alt="event">Famille</li>
+                    <li onclick="/*generateAudioMore()*/">Plus</li>
                 </div>
             </div>
 
-
-            <div class="book">
-                <h3>Père riche, Père pauvre:</h3>
-                <div class="book_audio">
-                    <div class="image_book">
-                        <img src="../../templates/images/kiyosaki.jpg" alt="pere riche pere pauvre de Robert Kiyosaki">
-                    </div>   
-                    <audio src="../../templates/audio/pere_riche_pere_pauvre.mp3" preload="auto" controls></audio>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-            </div>
-            <div class="book">
-
-                <h3>Lean Startup de Erick Ries:</h3>
-                <div class="book_audio">
-                    <div class="image_book">
-                        <img src="" alt="Lean Startup de Eric Ries">
-                    </div>
-                    <audio src="../../templates/audio/lean_startup.mp3" preload="auto" controls></audio>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-            </div>
-            <div class="book">
-                <h3>Die empty de Todd Henry:</h3>
-                <div class="book_audio">
-                    <div class="image_book">
-                        <img src="" alt=" Die empty de Todd Henry">
-                    </div>
-                    
-                    <audio src="../../templates/audio/die_empty.mp3" preload="auto" controls></audio>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
+            <div class="post" id="audioContainer">
             </div>
 
+        </div>
+
+        <!--right-sidebar-->
+        <div class="right-sidebar"></div>
     </div>

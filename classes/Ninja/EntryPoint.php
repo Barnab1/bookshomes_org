@@ -47,7 +47,6 @@ class EntryPoint
         
         ob_start();
         include __DIR__ . '/../../templates/html/'. $templateFilename ;
-        
         return ob_get_clean();
     }
     public function run()
