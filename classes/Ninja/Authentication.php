@@ -20,7 +20,7 @@ class Authentication
     private $passwordColumn;
 
 
-    public function __construct(\Ninja\DatabaseTable $usersTable,string $usernameColumn, string $passwordColumn)
+    public function __construct(\Ninja\DatabaseMysqli  $usersTable,string $usernameColumn, string $passwordColumn)
     {
         session_start();
        $this->usersTable = $usersTable;

@@ -48,9 +48,18 @@ class ProjectRoutes implements \Ninja\Routes
                         'GET'=>
                         [
                             'controller'=>$audioController,
-                            'action'=>'entrepreneurs'
+                            'action'=>'audioDisplay'
                         ]
                     ] ,
+                    'audio/personal'=>
+                    [
+                        'GET'=>
+                        [
+                            'controller'=>$audioController,
+                            'action'=>'personalAudio'
+                        ]
+                    ],
+
                     'news/accueil'=>
                     [
                         'GET'=>
@@ -69,7 +78,9 @@ class ProjectRoutes implements \Ninja\Routes
                             'controller'=>$developperSqueezeController,
                             'action'=>'formTreatment'
                         ]
-                    ]
+                        ]
+
+                   
                     
                    
                 ]  ;

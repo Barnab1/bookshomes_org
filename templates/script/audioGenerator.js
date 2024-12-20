@@ -67,29 +67,31 @@ let field = (audioFieldData ,fieldString,category) => {
  */
 
 let boilerplateAudio = (htmlElementToInsertInto,objectToLoopThrough,category)=> {
-    if(htmlElementToInsertInto !== undefined && objectToLoopThrough !==undefined){
+    if(htmlElementToInsertInto !== undefined && objectToLoopThrough !== undefined){
         return (htmlElementToInsertInto.innerHTML = `
 
+
             <div class="sub-field-audio-book">
+            
                         <button class="field" onclick=${category["category function"][0]}("698521juyuhj")>${category["fieldName"][0]}</button>
                         <button class="field" onclick=${category["category function"][0]}("658922hgytu5")>${category["fieldName"][1]}</button>
                         <button class="field" onclick=${category["category function"][0]}("456213899456")>${category["fieldName"][2]}</button>
             </div>
             `+ (objectToLoopThrough).map((x)=>{
     
-            let {audio,desc,id,img, title} = x;
+            let {audio,desc,id,img, title, catg} = x;
             return  ` <div class="audio_book">
                         <h3 class="title_audio">${title}:</h3>
                         <div class="image-and-content">
                                 <img src="../../templates/images/${img}" class="book_image"  
                                 alt="${title}" loading="lazy" width="100">
                             <div class="audio_description">
-                                <audio src="../../templates/audio/${audio}" controls></audio>
+                                <audio src="../../templates/audios_retouches/${audio}" controls></audio>
                                 <p>${desc}</p>
                             </div>
                         </div>
                         <div class="add_icon">
-                            <span class="add_audio" onclick=addToPlayList(${id})>+</span>
+                            <span class="add_audio" onclick= "addToPlayList('${id}')">+</span>
                         </div>
                     </div>`
         }).join(""));
@@ -102,12 +104,12 @@ let boilerplateAudio = (htmlElementToInsertInto,objectToLoopThrough,category)=> 
         `
     }
 
-   
-
-    /***
- * END
- */
 }
+
+
+
+
+
 
 
 /***

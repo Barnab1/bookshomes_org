@@ -2,38 +2,29 @@
  * Main Javascript File
  */
 
+const audioBookField = document.querySelectorAll('#audioBookField li');
+const subFields = document.querySelectorAll('.sub-field-audio-book .field');
 
-/**
- * Toggle Button
- * START
- */
+
+audioBookField.forEach((field)=>{
+    field.addEventListener("click",()=>{
+        audioBookField.forEach((fi)=>{
+            f.classList.remove('active-link');
+            field.classList.add('active-link');
+        })  
+    })
+})
 
 /*
-let toggleMenu = document.getElementById('toggleMenu');
-let toggleButton = document.getElementById('toggleButton');
-
-
-    toggleButton.addEventListener("click",(e)=>{
-        toggleButton.classList.toggle("on");
-        toggleMenu.classList.toggle("on");
-        
-        
-    });
-*/
-
-/**
- * Toggle Button
- * END
- */
-
-
-/**
- * Links about Books field
- * START
- */
-
-
-/**
- * Links about Books field
- * END
- */
+subFields.forEach((subField)=>{
+    subField.addEventListener("click",(e)=>{
+        e.preventDefault()
+        subFields.forEach((sbf)=>{
+            sbf.classList.remove('active');
+            subField.classList.add('active');
+            alert('hi')
+            subField.style.backgroundColor = "#045be6";
+        })
+    })
+})
+    */

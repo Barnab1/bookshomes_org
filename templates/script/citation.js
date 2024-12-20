@@ -4,7 +4,7 @@ let citationBox = document.getElementById('citation_box');
 
 let generateQuote = ()=> {
    return setInterval(()=>{
-        let lengthOfCitations = citations.length();
+        let lengthOfCitations = citations.length;
         let number = Math.floor(Math.random() * lengthOfCitations);
         let valueToInter = citations[number];
        
