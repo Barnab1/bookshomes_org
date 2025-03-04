@@ -13,7 +13,7 @@
      */
     private $databaseTable;
 
-    public function __construct($databaseTable)
+    public function __construct(Ninja\DatabaseMysqli $databaseTable )
     {
         $this->databaseTable = $databaseTable;
     }
@@ -29,6 +29,7 @@
      * 
      */
     public function cohortAnalysis(){
-
+         
     }
  }
+

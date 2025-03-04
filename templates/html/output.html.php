@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../templates/images/logo.png">
     <title><?=$title ?? 'Bienvenu à Bookshomes';?></title>
+    <meta name="description" content="La plateforme qui te permet de retirer le meilleur de la lecture
+    des livres" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
       rel="stylesheet"
@@ -24,17 +26,17 @@
 <body>
     <nav class="navbar">
         <div class="navbar-top">
-            <a href=" " class="logo">Bookshomes</a>
+            <a href="/" class="logo">Bookshomes</a>
             
         </div>
         <div class="navbar-bottom">
             <form action="" class="input-submit-header">
                 <input type="text" class="search-header" >
-                <button>Rechercher</button>
+                <button type="submit">Rechercher</button>
             </form>
             <ul>
-                <li><a href="/" class="">AudioBook</a></li>
-                <li><a href="/news/accueil" class="">News</a></li>
+                <li><a href="/">AudioBook</a></li>
+                <li><a href="/news/accueil">News</a></li>
                 <li><a href="/audio/personal">Mes lectures</a></li>  
             </ul>
         </div>
@@ -47,7 +49,7 @@
     </main>
 
     <footer id="footer" class="footer">
-            <p class="footer-copyright">&copy;  Bookshomes 2024</p>
+            <p class="footer-copyright">&copy;  Bookshomes <?php echo date('Y')?></p>
    </footer>
 </body>
 <script src='../../templates/script/script.js'></script>

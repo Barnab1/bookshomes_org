@@ -18,7 +18,7 @@ class EntryPoint
 
     /**
      * 
-     * @@@parama{*routes where there is all values}
+     * @@@param {*routes where there is all values}
      */
     private $routes;
    

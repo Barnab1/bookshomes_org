@@ -4,12 +4,12 @@
         <div class="left-sidebar">
             
             <div class="sidebar-profile-box">
-                <img src="../../templates/images/lean_startup.jpg" width="100%" alt="Pere riche, Pere pauvre">
+                <img src="../../templates/images/compound_effect.jpg" width="100%" alt="compound effect">
                 <div class="sidebar-profile-info">
                     <img src="../../templates/images/logo.png" alt="Bookshomes">
-                    <h3>Meilleur livre du mois</h3>
-
-                    <h3>Lean Startup</h3>
+                    <h3 class="text_center">Livre en audio du mois</h3>
+ 
+                    <a href="/audio/personal"><h3>L'effet composé de <strong>Darren Hardy</strong></h3></a>
                     
                     <ul>
                         <li>Like<span>52</span></li>
@@ -38,7 +38,7 @@
                     <li class="active-link" onclick="generateAudioEntrepreneurs()">Business</li>
                     <li onclick="generateAudioEntrepreneurs()">Profession</li>
                     <li onclick="generateAudioEntrepreneurs()">Famille</li>
-                    <li onclick="/*generateAudioMore()*/">Plus</li>
+                    <li onclick="">Plus</li>
                 </div>
             </div>
 

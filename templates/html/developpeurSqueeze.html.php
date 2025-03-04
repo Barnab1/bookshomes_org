@@ -1,4 +1,10 @@
-<?php echo $jean ?? ''?>
+<?php if($errors)
+{
+    foreach($errors as $error){
+        echo "<div class='error text_center'>". $error . '</div></br>';
+    }
+}
+?>
     <div class="squeeze-container">
         <div class="squeeze-header"></div>
         <h1 class="squeeze-title text_center">
@@ -11,7 +17,7 @@
 
         </p>
         <form action="/squeeze/developper" method="POST" class="squeeze-form">
-            <input type="email" name="" id="" placeholder="Entre une email valide ici">
+            <input type="email" name="user[email]" id="" placeholder="Entre une email valide ici">
             <button type="submit">Commence à coder dès aujourd'hui</button>
         </form>
         <p class="security-insurance text_center">

@@ -10,47 +10,24 @@ const shuffleButton = document.getElementById("shuffle");
 const allSongs = [
     {
         id: 0,
-        title: "Lean Startup",
-        artist: "Eric Ries",
-        duration: "2:59",
-        src: "../../templates/audios_retouches/lean_startup_def.mp3",
-        audioName:"lean_startup_def.mp3"
+        title: "Chapitre 1: L'EFFET COMPOSE en action",
+        artist: "Darren Hardy",
+        duration: "28:07",
+        src: "../../templates/audios_retouches/compound_effect_chapter_1.mp3",
+        audioName:"compound_effect_chapter_2.mp3"
     },
     {
         id:1,
-        title:"Die empty",
-        artist: "Todd Henry",
-        src:"../audio/die_empty.mp3",
-        duration: "2:31",
-        audioName: "die_empty.mp3"
+        title:"Chapitre 2: les choix",
+        artist: "Darren Hardy",
+        src:"../../templates/audios_retouches/compound_effect_chapter_2.mp3",
+        duration: "52:35",
+        audioName: "compound_effect_chapter_2.mp3"
     },
-    {
-        id:2,
-        title:"Alchimiste",
-        artist:"Paulo Coelho",
-        duration:"2:38",
-        src:"../audio/alchimiste.mp3",
-        audioName: "alchimiste.mp3"
-    },
-    {
-        id:3,
-        title:"Père riche, père pauvre",
-        artist:"Robert Kiyosaki",
-        duration:"1:35",
-        src:"../../templates/audios_retouches/pere_riche_pere_pauvre_def.mp3",
-        audioName: "pere_riche_pere_pauvre_def.mp3",
-    },
-    {
-        id:4,
-        title:"Comment se faire des amis",
-        artist:"Dale Carnegie",
-        duration:"3:03",
-        src:"../../templates/audios_retouches/how_to_win_friends_def.mp3",
-        audioName:"how_to_win_friends_def.mp3"
-    }
+   
 ]
 
-localStorage.setItem("songs",JSON.stringify(allSongs))
+//localStorage.setItem("songs",JSON.stringify(allSongs))
 
 /**
  * To store the music on local storage
@@ -96,7 +73,7 @@ const audio = new Audio();
 
 
 let userData = {
-  songs: [...JSON.parse(localStorage.getItem('songs'))],
+  songs: [...allSongs],
   currentSong: null,
   songCurrentTime: 0,
 };
