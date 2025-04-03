@@ -1,7 +1,6 @@
 <?php
 namespace Project\Controller;
 
-use PhpMyAdmin\Sanitize;
 
 class DevelopperSqueezeController implements \Ninja\Squeeze{
 
@@ -34,11 +33,12 @@ class DevelopperSqueezeController implements \Ninja\Squeeze{
          * I want to check DatabaseMysqli's total function
          */
 
-        $data = ["email"=>"bookshomes@gmail.com"];
+        $data = ["email"=>"yvin@gmail.com"];
 
-        $totalOfElt = $this->squeezeDevelopperTable->total();
+        $record = $this->squeezeDevelopperTable->total();
 
-        echo $totalOfElt;
+        
+        echo "Inside that table, we have $record record";
 
          /*
         $user = $_POST['user'];

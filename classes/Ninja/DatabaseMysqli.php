@@ -107,20 +107,22 @@ public function __construct(\mysqli $connection,string  $table, string $primaryK
         return $objects;
     }
 
-    public function total($field=null,$value=null)
+    /**
+     * total()
+     * 
+     * return the number of element inside a table
+     */
+    public function total($where = null,$params =[])
     {
-    $sql='SELECT COUNT(*) FROM `'.$this->table.'`';
-    $parameters= [];
+        $sql = "SELECT COUNT(*) FROM $this->table";
 
-    if(!empty($field))
-    {
-        $sql.=' WHERE `'. $field. '`= :value';
-        $parameters=['value'=>$value];
-    }
+        if($where){
+            $sql  .=" WHERE $where";
+        }
 
-    $result=$this->query($sql,$parameters);
-    $row=$result->fetch();
-    return $row[0];
+        $stmt = $this->query($sql,$params);
+        $result =  $stmt->get_result();
+        return $result->fetch_row()[0];
 
 }
 
@@ -129,6 +131,8 @@ public function __construct(\mysqli $connection,string  $table, string $primaryK
  * 
  * That function will insert data
  * inside database
+ * 
+ * return wheter the records has been inserted inserted succesfully or not
  */
     public function insert(array $data):bool {
 
@@ -137,20 +141,12 @@ public function __construct(\mysqli $connection,string  $table, string $primaryK
         $placeholders = implode(',', array_fill(0, count($data), '?'));
 
         $sql = "INSERT INTO ". "`". $this->table. "` ($columns) VALUES ($placeholders)";
-        
+       
+
         $stmt = $this->query($sql, array_values($data));
 
-        /**Je veux voir si c'est le même effet que l'on obtient si l'on utilisait
-         * $this->pdo->lastInsertId();
-         */
-        $lastInsertedId = $this->connection->insert_id;
-
-        /***
-         *  Tester l'élément ci-dessus
-         */
         return $this->connection->affected_rows > 0;
     }
-
     /**
      * update()
      * 
@@ -212,9 +208,14 @@ public function __construct(\mysqli $connection,string  $table, string $primaryK
  * delete()
  * 
  * Delete a record from database Table
+ * 
+ * Eg:
+ *  $db->delete('id = ?', [2])
  */
 public function delete(string $where, array $params){
-    $sql = "";
+    $sql = "DELETE FROM $this->table WHERE $where";
+    $stmt = $this->query($sql,$params);
+    return $stmt->affected_rows > 0;
 }
 
 }
